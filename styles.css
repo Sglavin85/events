@@ -1,0 +1,53 @@
+.inputBox {
+    display: flex;
+    flex-direction: row;
+}
+
+.input {
+    height: 20px;
+    margin-top: 28px;
+    margin-left: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+}
+
+#leftDisplay {
+    border: 2px solid red;
+    margin: 20px;
+    height: 20px;
+    width: 40%;
+}
+
+#rightDisplay {
+    border: 2px solid blue;
+    margin: 20px;
+    height: 20px;
+    width: 40%;
+
+}
+
+#contain {
+    display: flex;
+    min-height: 1500px;
+  }
+  
+  #audrey {
+    background-color: purple;
+    color: snow;
+    min-height: 100px;
+    width: 50px;
+    position: fixed;
+  }
+
+  .disabled {
+    background-color: gray;
+}
+
+.enabled {
+    background-color: fuchsia;
+    color: goldenrod;
+}
