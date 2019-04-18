@@ -17,6 +17,8 @@ let audrey = document.getElementById("audrey");
 
 let scrollPort = document.querySelector("#contain");
 
+//this allows the purple box to grow and shrink in correlation with the scrolling of the document. The difficulties were identifying what was scrolling, and ensuring that the information pushed to the style changes was a string which included the proper syntax ("px"). 
+
 document.addEventListener("scroll", function () {
     console.log("scrolling")
     let height = Math.round(window.scrollY) ;
@@ -43,12 +45,19 @@ function test(divToChange){
     div.classList.add("enabled")
 };
 
+
+//Below is the function to iterate over the buttons and apply the CSS changes over the corresponding divs.
+
+//Had difficulty figuring out how to make that happen, used console log to see the .id of the buttons and used the slice method to remove them a portion of the id and the result was the id of the corresponding div: Ex: activate-flight ID I removed the first 9 characters and the result was flight, which was the ID for the div I wanted to affect, I then used that as a parameter for the test function seen below.
+
 buttons.forEach(button => {
     button.addEventListener("click", () => {
         shortenedDivId = button.id.slice(9)
         test(shortenedDivId)
     })
 })
+
+//In this example I wanted a single button to affect multiple divs, I tried just applying it to all of them but that didnt work so I ran a forEach loop over the array I created from the powers variable from above.
 
 activateButton.addEventListener("click", () => {
     powers.forEach(power => {
